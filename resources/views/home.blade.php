@@ -7,5 +7,10 @@
 </head>
 <body>
 
+<script defer src="{{ asset('node_modules/alpinejs/dist/cdn.min.js') }}"></script>
+<script defer src="{{ asset('node_modules/leaflet/dist/leaflet.js') }}"></script>
+<script>
+
+</script>
 </body>
 </html>
