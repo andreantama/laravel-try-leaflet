@@ -1,0 +1,19 @@
+{
+  "name": "laravel-try-leaflet",
+  "version": "1.0.0",
+  "description": "Aplikasi percobaan mengunakan leafletjs dan alpinejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "leafletjs",
+    "alpinejs"
+  ],
+  "author": "Andrean Yogatama",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.13.3",
+    "leaflet": "^1.9.4"
+  }
+}
