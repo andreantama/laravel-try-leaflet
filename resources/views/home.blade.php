@@ -31,16 +31,15 @@
                 //var image = L.imageOverlay('{{ asset("images/contoh.png") }}', bounds).addTo(map);
                 map.fitBounds(bounds);
 
-                var sol = L.latLng([ 366, 117 ]);
-                
-                for(var i = 0; i <= 1; i++) {
+            // Data koordinat yang sama untuk semua marker
+                var sharedCoordinates = [366, 117];
 
-                    var marker1 = L.circle(sol, {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 50
-}).bindPopup("Marker "+i).addTo(map);
+                for(var i = 0; i <= 3; i++) {
+                    var sol = L.latLng(this.getCoordinatesAroundDistance(sharedCoordinates[0] + i, sharedCoordinates[1] + i, 10000));
+                    console.log(sol);
+                    var marker1 = L.marker(sol, {
+                        riseOnHover : true
+                    }).bindPopup("Marker "+i).addTo(map);
                 }
 
                 //map.removeLayer(marker1);
@@ -48,6 +47,20 @@
 
                 map.on('click', this.onMapClick);
             },
+
+            getCoordinatesAroundDistance(lat, lon, distance) {
+                const earthRadius = 6371.0;
+                const distanceInKm = distance / 1000.0;
+                const angularDistance = distanceInKm / earthRadius;
+                const latRad = (Math.PI / 180.0) * lat;
+                const lonRad = (Math.PI / 180.0) * lon;
+                const newLatRad = latRad + angularDistance;
+                const newLonRad = lonRad + (angularDistance / Math.cos(latRad));
+                const newLat = (180.0 / Math.PI) * newLatRad;
+                const newLon = (180.0 / Math.PI) * newLonRad;
+                return [newLat, newLon];
+            },
+
 
             onMapClick(e) {
                 console.log(e.latlng)
