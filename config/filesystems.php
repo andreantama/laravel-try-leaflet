@@ -56,6 +56,17 @@ return [
             'throw' => false,
         ],
 
+        's3_bucket_api_public_sandbox' => [
+            'driver' => 's3',
+            'key' => env('NETAPP_ACCESS_KEY_ID'),
+            'secret' => env('NETAPP_SECRET_ACCESS_KEY'),
+            'region' => env('NETAPP_DEFAULT_REGION'),
+            'bucket' => 'api-public-sandbox',
+            'url' => env('NETAPP_URL'),
+            'endpoint' => env('NETAPP_ENDPOINT'),
+            'use_path_style_endpoint' => env('NETAPP_USE_PATH_STYLE_ENDPOINT', true),
+        ],
+
     ],
 
     /*
