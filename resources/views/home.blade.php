@@ -6,7 +6,7 @@
     <title>Njajal Leaflet</title>
     <link rel="stylesheet" href="{{ asset('node_modules/leaflet/dist/leaflet.css') }}"/>
     <style>
-        #map { height: 580px; }
+        #map { width:50%; height: 580px; }
     </style>
 </head>
 <body>
@@ -26,7 +26,7 @@
                     crs: L.CRS.Simple
                 });
 
-                var bounds = [[0,0], [1000,1000]];
+                var bounds = [[0,0], [650,650]];
                  var image = L.imageOverlay('{{ $mapImage }}', bounds).addTo(map);
                 //var image = L.imageOverlay('{{ asset("images/contoh.png") }}', bounds).addTo(map);
                 map.fitBounds(bounds);
@@ -58,6 +58,8 @@
                 const newLonRad = lonRad + (angularDistance / Math.cos(latRad));
                 const newLat = (180.0 / Math.PI) * newLatRad;
                 const newLon = (180.0 / Math.PI) * newLonRad;
+                console.log(newLat);
+                console.log(newLon);
                 return [newLat, newLon];
             },
 
