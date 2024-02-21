@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, "index"])->name("home");
+Route::get('/kawasan', [App\Http\Controllers\HomeController::class, "kawasan"])->name("kawasan");
+Route::get('/cobaDjitra', [App\Http\Controllers\HomeController::class, "cobaDjitra"])->name("cobaDjitra");
 
 Route::get('peta', function () {
   $path = storage_path('app/public/PETA SOETOMO.png');
@@ -24,3 +26,13 @@ Route::get('peta', function () {
   $response->header("Content-Type", $type);
   return $response;
 })->name('peta');
+
+Route::get('peta-kawasan', function () {
+    $path = storage_path('app/public/LAYOUT KAWASAN-Model_1.jpg');
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+  })->name('peta-kawasan');
