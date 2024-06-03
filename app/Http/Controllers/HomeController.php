@@ -17,6 +17,16 @@ class HomeController extends Controller
         ]);
     }
 
+    function itkimap() {
+        $mapImage1 = Route("itki1");
+        $mapImage2 = Route("itki2");
+        // dd($mapImage);
+        return view("itkimap",[
+            "mapImage1" => $mapImage1,
+            "mapImage2" => $mapImage2,
+        ]);
+    }
+
 
     function kawasan() {
         $mapImage = Route("peta-kawasan");
