@@ -17,6 +17,7 @@
 
 <script defer src="{{ asset('node_modules/alpinejs/dist/cdn.min.js') }}"></script>
 <script src="{{ asset('node_modules/leaflet/dist/leaflet.js') }}"></script>
+<script src="{{ asset("node_modules/leaflet-ant-path/dist/leaflet-ant-path.js") }}"></script>
 <script>
 
     const startFunction = function () {
@@ -46,6 +47,13 @@
 
 
                 map.on('click', this.onMapClick);
+
+                // Using a polygon
+                const antPolygon = antPath([
+                [51.509, -0.08],
+                [51.503, -0.06],
+                [51.51, -0.047]
+                ], { use: L.polygon, fillColor: "red" });
             },
 
             getCoordinatesAroundDistance(lat, lon, distance) {
