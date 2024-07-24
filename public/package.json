@@ -13,6 +13,7 @@
   "author": "Andrean Yogatama",
   "license": "ISC",
   "dependencies": {
+    "@ansur/leaflet-pulse-icon": "^0.1.1",
     "alpinejs": "^3.13.3",
     "leaflet": "^1.9.4",
     "leaflet-highlightable-layers": "^3.0.1",
