@@ -17,6 +17,10 @@ class HomeController extends Controller
         ]);
     }
 
+    function openstreetmap(Request $request) {
+        return view("openstreetmap");
+    }
+
     function itkimap() {
         $mapImage1 = Route("itki1");
         $mapImage2 = Route("itki2");
