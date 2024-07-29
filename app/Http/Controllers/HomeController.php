@@ -21,6 +21,10 @@ class HomeController extends Controller
         return view("openstreetmap");
     }
 
+    function osmbuilding(Request $request) {
+        return view('osmbuilding');
+    }
+
     function itkimap() {
         $mapImage1 = Route("itki1");
         $mapImage2 = Route("itki2");

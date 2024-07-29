@@ -18,6 +18,7 @@ Route::get('/kawasan', [App\Http\Controllers\HomeController::class, "kawasan"])-
 Route::get('/cobaDjitra', [App\Http\Controllers\HomeController::class, "cobaDjitra"])->name("cobaDjitra");
 Route::get('/itkimap', [App\Http\Controllers\HomeController::class, "itkimap"])->name("itkimap");
 Route::get('/openstreetmap', [App\Http\Controllers\HomeController::class, "openstreetmap"])->name("openstreetmap");
+Route::get('/osmbuilding', [App\Http\Controllers\HomeController::class, "osmbuilding"])->name("osmbuilding");
 
 Route::get('peta', function () {
   $path = storage_path('app/public/PETA SOETOMO.png');
